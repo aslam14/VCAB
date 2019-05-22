@@ -1,11 +1,17 @@
 <template>
   <div id="app">
   <v-app id="inspire">
-    <v-container fluid>
+    <v-container fluid blue-grey lighten-5>
     
-    <v-layout justify-space-around>
-      <v-flex xs5 sm5 offset-sm1>
-        <v-card>
+    <v-layout row wrap justify-space-around >
+  <v-flex d-flex xs12 sm7 md5 pt-3>
+        <v-hover>
+      <v-card
+        style="width: 100%;"
+        slot-scope="{ hover }"
+        :elevation="hover ? 12 : 2"
+        class="mx-auto"
+      >
           <v-img
             class="red--text"
             height="300px"
@@ -45,11 +51,18 @@
         </div>
       </v-expand-transition>
         </v-card>
+        </v-hover>
       </v-flex>
       
 
-      <v-flex xs5 sm5 offset-sm1>
-        <v-card>
+      <v-flex d-flex xs12 sm7 md5 pt-3>
+        <v-hover>
+      <v-card
+        style="width: 100%;"
+        slot-scope="{ hover }"
+        :elevation="hover ? 12 : 2"
+        class="mx-auto"
+      >
           <v-img
             class="red--text"
             height="300px"
@@ -88,12 +101,19 @@
         </div>
       </v-expand-transition>
         </v-card>
+        </v-hover>
       </v-flex>
     </v-layout>
 
-    <v-layout justify-space-around style="padding-Top: 20px;">
-      <v-flex xs5 sm5 offset-sm1>
-        <v-card>
+    <v-layout row wrap justify-space-around style="padding-Top: 10px;">
+  <v-flex d-flex xs12 sm7 md5 pt-3>
+        <v-hover>
+      <v-card
+        style="width: 100%;"
+        slot-scope="{ hover }"
+        :elevation="hover ? 12 : 2"
+        class="mx-auto"
+      >
           <v-img
             class="red--text text-block"
             height="300px"
@@ -130,11 +150,13 @@
         </div>
       </v-expand-transition>
         </v-card>
+        </v-hover>
       </v-flex>
 
-      <v-flex xs5 sm5 offset-sm1>
+      <v-flex d-flex xs12 sm7 md5 pt-3>
         <v-hover>
       <v-card
+        style="width: 100%;"
         slot-scope="{ hover }"
         :elevation="hover ? 12 : 2"
         class="mx-auto"
@@ -178,6 +200,7 @@
         </v-hover>
       </v-flex>
     </v-layout>
+    
 
     </v-container>
   </v-app>

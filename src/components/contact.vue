@@ -24,16 +24,18 @@
     </v-card-title>
     <v-form 
       ref="form"
-      v-model="form"
+      v-model="valid"
       class="pa-3 pt-4"
       style="width: 100%"
     >
      <v-text-field 
-       v-model="text"
-         :rules="[rules.required]"
+         v-model="name"
+         :counter="10"
+         :rules="nameRules"
+         label="Name"
+         required
          box
          color="deep-purple"
-         label="Name"
          style="min-height: 96px"
          type="text"
          > </v-text-field>
@@ -46,10 +48,11 @@
          ></v-text-field>
          <v-text-field
          v-model="email"
-         :rules="[rules.email][rules.required]"
+         :rules="emailRules"
+         label="E-mail"
+         required
          box
          color="deep-purple"
-         label="Email address"
          type="email"
          ></v-text-field>
          <v-textarea
@@ -64,7 +67,7 @@
   <v-divider></v-divider>
       <v-card-actions>
         <v-btn
-            :disabled="!form"
+            :disabled="!valid"
             :loading="isLoading"
             class="white--text"
             color="deep-purple accent-4"
@@ -124,16 +127,17 @@
 export default {
    data () {
        return {
-           email: undefined,
            phone: undefined,
-           subject: 'hello',
+           subject: 'your message',
            isLoading: false,
-           
-           rules : {
-                email: v => (v || '').match(/@/) || 'Please enter a valid email',
-                length: len => v => (v || '').length >= len || `Invalid character length, required ${len}`,
-                required: v => !!v || 'This field is required'
-           },
+           name: '',
+           nameRules: [ v => !!v || 'Name is required',
+           v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+            ],
+           email: '',
+           emailRules: [ v => !!v || 'E-mail is required',
+           v => /.+@.+/.test(v) || 'E-mail must be valid'
+           ],
            center: { lat: 33.690388, lng: 73.011054 },
            markers: [{
            position: {lat: 33.690388, lng: 73.011054}

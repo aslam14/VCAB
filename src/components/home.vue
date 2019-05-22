@@ -6,7 +6,7 @@
     >
       <v-flex xs12>
         <v-img
-          :src="require('../assets/Hiace.png')"
+          :src="require('../assets/v_logo_icon.png')"
           class="my-3"
           contain
           height="200"
@@ -23,7 +23,7 @@
           </p>
           <v-divider></v-divider>
           <br>
-          <p class="subheading font-weight-regular">
+          <p class="subheading text-xs-justify font-weight-regular">
             VCAB is catering the needs of citizens by providing devoted, professional and hostile service at your door step. We are available for you 24x7, 365 days a year to provide efficient and reliable service to our esteem customers. Inorder to meet increasing demand we are providing multitude of services for our clients. Now you can relax and enjoy the comfortable and safe journey ranging from day to day travel to long trips. Wheather you are a corporation, organization, institute or person we have got all traveling solutions for you. Do you have questions or would you like to order a taxi? Then just call us:
           </p>
         <v-divider></v-divider>

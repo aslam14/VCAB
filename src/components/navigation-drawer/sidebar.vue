@@ -1,6 +1,6 @@
 <template>
     <v-navigation-drawer
-        class="sidebar hidden-md-and-up"
+        class="sidebar blue lighten-2 hidden-md-and-up"
         hide-overlay
         app
          :style="customStyle"
@@ -19,10 +19,10 @@
           class="white--text"
         >
           <v-list-tile-action>
-            <v-icon color="white">{{ item.icon }}</v-icon>
+            <v-icon color="#003399">{{ item.icon }}</v-icon>
           </v-list-tile-action>
 
-          <v-list-tile-content class="white--text">
+          <v-list-tile-content class="red--text">
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -103,4 +103,12 @@ export default {
   color: blue !important;
     caret-color: blue!important;
 }
+
+.v-list__tile {
+  padding: 8px;
+  border: 1px solid #996699;
+  border-bottom: 0px;
+}
+
+
 </style>

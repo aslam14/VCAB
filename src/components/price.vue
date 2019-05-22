@@ -8,8 +8,8 @@
                 OUR RATES</h1>
             <v-divider></v-divider>
 
-            <v-flex pt-4 class="subheading justify font-weight-regular">
-            In most cities, your cost is calculated up front, before you confirm your ride. Here are some basic tariff/rates for our available fleet within city limits:
+            <v-flex pt-4 class="subheading text-xs-justify font-weight-regular">
+              In most cities, your cost is calculated up front, before you confirm your ride. Here are some basic tariff/rates for our available fleet within city limits:
             </v-flex>
     </v-flex>
   <v-divider></v-divider>
@@ -17,7 +17,7 @@
   <v-layout wrap justify-center pt-5>
       <v-flex xs12 sm12 md8>
           <v-carousel :height="height">
-            <v-carousel-item v-for="(item,i) in items" :aspect-ratio="1.75" :key="i" :src="item.src"></v-carousel-item>
+            <v-carousel-item v-for="(item,i) in images" :aspect-ratio="1.75" :key="i" :src="item.src"></v-carousel-item>
           </v-carousel>
         </v-flex>
       
@@ -62,10 +62,11 @@
 
 <script>
 export default {
-    name: "school",
+    name: "price",
+    
   data() {
       return{
-        items: [
+        images: [
           { src: require("@/assets/Alto.jpg") },
           { src: require("@/assets/Vitz.jpg") },
           { src: require("@/assets/Gli.jpg") },
@@ -75,15 +76,16 @@ export default {
           { src: require("@/assets/Prado.jpg") },
           { src: require("@/assets/Cruiser.jpg") }
       ],
+      
       height() {
         if (this.$vuetify.breakpoint.xs) {
           return 200;
         }
         if (this.$vuetify.breakpoint.sm) {
-          return 250;
+          return 300;
         }
         if (this.$vuetify.breakpoint.md) {
-          return 250;
+          return 300;
         }
       },
         pagination: {
@@ -233,8 +235,41 @@ export default {
 
 <style>
 
+table th {
+  text-transform: uppercase;
+  text-align: center;
+  background: yellow;
+  color: #FFF;
+  padding: 8px;
+  border: 3px solid #44475C;
+  font-weight: bold;
+  min-width: 30px;
+}
+table caption {
+  text-transform: uppercase;
+  text-align: center;
+  background: yellow;
+  font-weight: bolder;
+  color: black;
+  padding: 8px;
+  border: 3px solid #44475C;
+  border-bottom: 0px;
+  min-width: 30px;
+}
+table td {
+  text-align: center;
+  padding: 8px;
+  border-right: 2px solid #7D82A8;
+}
+table td:last-child {
+  border-right: none;
+}
+table tbody tr:nth-child(2n) td {
+  background: #D4D8F9;
+}
+
 .mobile {
-      color: indianred;
+      color: #333;
     }
 
     @media screen and (max-width: 768px) {
@@ -245,11 +280,11 @@ export default {
       }
 
       .mobile table.v-table tr:nth-child(odd) {
-        border-left: 5px solid deeppink;
+        border-left: 6px solid rgb(236, 65, 157);
       }
 
       .mobile table.v-table tr:nth-child(even) {
-        border-left: 5px solid black;
+        border-left: 6px solid cyan;
       }
 
       .mobile table.v-table tr td {
@@ -258,7 +293,7 @@ export default {
         border-bottom: 1px solid #f5f5f5;
         height: auto;
         padding: 10px;
-        color: rgb(186, 226, 43)
+        color: blueviolet
       }
 
       .mobile table.v-table tr td ul li:before {
@@ -266,7 +301,7 @@ export default {
         padding-right: .5em;
         text-align: left;
         display: block;
-        color: rgb(236, 31, 202);
+        color: red;
 
       }
       .v-datatable__actions__select
@@ -292,21 +327,10 @@ export default {
     .flex-item {
       padding: 5px;
       width: 50%;
-      height: 40px;
+      height: 20%;
       font-weight: bold;
-      justify-content: center;
-      
+      color: blue;
     }
-
-    table .th {
-      color: aqua;
-      background: red;
-    }
-
-    .toolbar .text {
-      background-color: black;
-    }
-  
 
  </style>   
 
